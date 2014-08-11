@@ -20,15 +20,17 @@ class BaseIndentCommand(sublime_plugin.TextCommand):
         return True
 
     def is_enabled(self):
+        return True
+
         """
         Enables or disables the 'indent' command.
         Command will be disabled if there are currently no text selections and current file is not 'XML' or 'Plain Text'.
         This helps clarify to the user about when the command can be executed, especially useful for UI controls.
         """
-        if self.view == None:
-            return False
+        # if self.view == None:
+        #     return False
 
-        return self.check_enabled(self.get_language())
+        # return self.check_enabled(self.get_language())
 
     def run(self, edit):
         """
